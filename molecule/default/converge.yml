@@ -1,0 +1,11 @@
+---
+
+- name: Converge
+  hosts: all
+  become: "yes"
+  vars:
+    lynis_execute: True
+  tasks:
+    - name: Include role 'ansible-role-lynis'
+      ansible.builtin.include_role:
+        name: ansible-role-lynis

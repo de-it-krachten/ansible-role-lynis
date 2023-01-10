@@ -68,6 +68,8 @@ lynis_url: "{{ lynis_repo }}/archive/refs/tags/{{ lynis_version }}.tar.gz"
 - name: sample playbook for role 'lynis'
   hosts: all
   become: "yes"
+  vars:
+    lynis_execute: True
   tasks:
     - name: Include role 'lynis'
       ansible.builtin.include_role:
