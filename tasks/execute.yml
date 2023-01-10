@@ -10,7 +10,7 @@
   tags: molecule-idempotence-notest
 
 - name: Fetch lynis results
-  fetch:
+  ansible.builtin.fetch:
     src: /var/log/{{ item }}
     dest: /tmp/{{ inventory_hostname }}-{{ item }}
     flat: yes

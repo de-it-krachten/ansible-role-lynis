@@ -38,14 +38,14 @@
       - "lynis requested release : {{ lynis_version }}"
 
 - name: Download latest version of lynis
-  get_url:
+  ansible.builtin.get_url:
     url: "{{ lynis_url }}"
     dest: /tmp/lynis-{{ lynis_url | basename }}
   delegate_to: localhost
   run_once: yes
 
 - name: Extract lynis to the managed nodes
-  unarchive:
+  ansible.builtin.unarchive:
     src: /tmp/lynis-{{ lynis_url | basename }}
     dest: "{{ lynis_root }}"
 
