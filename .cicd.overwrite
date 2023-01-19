@@ -12,6 +12,10 @@ generic:
 molecule:
   requirements:
     roles_extra: []
+  prepare:
+    vars:
+      activate_epel: true
+      install_python: true
   converge:
     vars:
       lynis_execute: true
