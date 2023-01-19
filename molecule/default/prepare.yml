@@ -95,11 +95,6 @@
             state: present
             key: "{{ root_pubkey }}"
 
-    - name: Install python
-      ansible.builtin.include_role:
-        name: deitkrachten.python
-      when: install_python is defined and install_python | bool
-
     - name: Family Debian
       when: ansible_os_family == 'Debian'
       block:
@@ -238,6 +233,10 @@
             name: deitkrachten.epel
           when: activate_epel is defined and activate_epel | bool and ansible_distribution != 'Fedora'
 
+    - name: Install python
+      ansible.builtin.include_role:
+        name: deitkrachten.python
+      when: install_python is defined and install_python | bool
 
     - name: Firewall
       when:
