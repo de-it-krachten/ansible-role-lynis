@@ -60,5 +60,5 @@
   ansible.builtin.pip:
     name: ansi2html
     state: present
-    executable: "{{ 'pip' if (ansible_os_family == 'RedHat' and ansible_distribution_major_version | int <= 7) else 'pip3' }}"
+    executable: "pip3"
   become: yes
