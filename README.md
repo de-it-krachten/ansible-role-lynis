@@ -35,8 +35,8 @@ Supported platforms
 - Ubuntu 18.04 LTS
 - Ubuntu 20.04 LTS
 - Ubuntu 22.04 LTS
-- Fedora 35
 - Fedora 36
+- Fedora 37
 
 Note:
 <sup>1</sup> : no automated testing is performed on these platforms
@@ -68,6 +68,8 @@ lynis_url: "{{ lynis_repo }}/archive/refs/tags/{{ lynis_version }}.tar.gz"
 - name: sample playbook for role 'lynis'
   hosts: all
   become: "yes"
+  vars:
+    lynis_execute: True
   tasks:
     - name: Include role 'lynis'
       ansible.builtin.include_role:

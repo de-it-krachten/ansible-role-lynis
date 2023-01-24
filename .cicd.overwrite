@@ -1,0 +1,21 @@
+---
+
+# Generic
+generic:
+  role: ansible-role-lynis
+  role_short: lynis
+  role_description: |
+    Installs lynis om a variety of platforms
+    https://cisofy.com 
+  collections: []
+
+molecule:
+  requirements:
+    roles_extra: []
+  prepare:
+    vars:
+      activate_epel: true
+      install_python: true
+  converge:
+    vars:
+      lynis_execute: true

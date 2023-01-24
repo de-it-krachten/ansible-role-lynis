@@ -1,0 +1,15 @@
+---
+
+# Lynis version to be installed
+lynis_version: 'latest'
+
+# Should lynis be executed
+lynis_execute: false
+
+# root directory where to install the software
+lynis_root: /usr/local
+
+# Github API & download urls
+lynis_api: https://api.github.com/repos/CISOfy/lynis
+lynis_repo: https://github.com/CISOfy/lynis
+lynis_url: "{{ lynis_repo }}/archive/refs/tags/{{ lynis_version }}.tar.gz"

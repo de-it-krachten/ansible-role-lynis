@@ -1,0 +1,64 @@
+---
+
+- name: Get lynis version installed
+  ansible.builtin.command: >-
+    {{ lynis_root }}/lynis/lynis --version
+  changed_when: no
+  failed_when: no
+  register: lynis_version_installed
+
+- name: Get latest version/release for lynis using Github API
+  run_once: yes
+  delegate_to: localhost
+  block:
+
+    - name: Get latest release of a public repository
+      ansible.builtin.uri:
+        url: "{{ lynis_api + '/releases/latest' }}"
+      environment:
+        https_proxy: "{{ https_proxy | default('') }}"
+        http_proxy: "{{ http_proxy | default('') }}"
+      check_mode: no
+      register: lynis_release_latest
+
+    - name: Register the version only
+      ansible.builtin.set_fact:
+        lynis_version_latest: "{{ lynis_release_latest['json']['tag_name'] | regex_replace('^v') }}"
+
+    - name: Redefine version=latest with the actual version
+      ansible.builtin.set_fact:
+        lynis_version: "{{ lynis_version_latest }}"
+      when: lynis_version == 'latest'
+
+- name: Show lynis release
+  ansible.builtin.debug:
+    msg:
+      - "lynis installed release : {{ lynis_version_installed.stdout | default('N/A') }}"
+      - "lynis latest release    : {{ lynis_version_latest }}"
+      - "lynis requested release : {{ lynis_version }}"
+
+- name: Download latest version of lynis
+  ansible.builtin.get_url:
+    url: "{{ lynis_url }}"
+    dest: /tmp/lynis-{{ lynis_url | basename }}
+    mode: "0644"
+  delegate_to: localhost
+  run_once: yes
+
+- name: Extract lynis to the managed nodes
+  ansible.builtin.unarchive:
+    src: /tmp/lynis-{{ lynis_url | basename }}
+    dest: "{{ lynis_root }}"
+
+- name: Create a symbolic link
+  ansible.builtin.file:
+    src: lynis-{{ lynis_version }}
+    dest: "{{ lynis_root }}/lynis"
+    state: link
+
+- name: Install ansi2html (site-packages)
+  ansible.builtin.pip:
+    name: ansi2html
+    state: present
+    executable: "pip3"
+  become: yes
