@@ -5,6 +5,8 @@
   become: "yes"
   vars:
     lynis_execute: True
+  roles:
+    - deitkrachten.showinfo
   tasks:
     - name: Include role 'ansible-role-lynis'
       ansible.builtin.include_role:
