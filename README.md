@@ -70,6 +70,8 @@ lynis_url: "{{ lynis_repo }}/archive/refs/tags/{{ lynis_version }}.tar.gz"
   become: "yes"
   vars:
     lynis_execute: True
+  roles:
+    - deitkrachten.showinfo
   tasks:
     - name: Include role 'lynis'
       ansible.builtin.include_role:
