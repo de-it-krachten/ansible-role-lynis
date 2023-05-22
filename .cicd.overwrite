@@ -9,9 +9,17 @@ generic:
     https://cisofy.com 
   collections: []
 
+# Dependencies
+dependencies:
+  roles:
+    - deitkrachten.cron
+  collections: []
+
+# Molecule
 molecule:
   requirements:
-    roles_extra: []
+    roles_extra:
+      - deitkrachten.cron
   prepare:
     vars:
       activate_epel: true

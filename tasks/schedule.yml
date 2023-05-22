@@ -1,0 +1,53 @@
+---
+
+- name: Ensure all components are present
+  ansible.builtin.include_role:
+    name: deitkrachten.cron
+
+- name: Create wrapper script
+  ansible.builtin.template:
+    src: lynis.sh.j2
+    dest: "{{ lynis_wrapper_script }}"
+    mode: "0550"
+
+- name: Schedule daily report
+  ansible.builtin.cron:
+    name: Lynis report
+    weekday: "{{ lynis_schedule_times['weekday'] }}"
+    minute: "{{ lynis_schedule_times['minute'] }}"
+    hour: "{{ lynis_schedule_times['hour'] }}"
+    user: "{{ lynis_execution_user }}"
+    job: "{{ lynis_schedule_command }}"
+    cron_file: lynis
+
+- name: Execute scheduled script immediately
+  when: lynis_immediate | bool
+  tags: molecule-idempotence-notest
+  block:
+
+    - name: Execute script
+      ansible.builtin.command:
+        cmd: "{{ lynis_wrapper_script }}"
+      become: yes
+      become_user: "{{ lynis_execution_user }}"
+      changed_when: true
+
+    - name: Create local path
+      ansible.builtin.file:
+        path: "{{ lynis_central_path }}/{{ inventory_hostname }}"
+        state: directory
+        owner: "{{ lookup('pipe', 'id -un') }}"
+        group: "{{ lookup('pipe', 'id -gn') }}"
+        mode: "0750"
+      run_once: yes
+      become: yes
+      delegate_to: localhost
+
+    - name: Retrieve reports
+      ansible.builtin.fetch:
+        src: "{{ item }}"
+        dest: "{{ lynis_central_path }}/{{ inventory_hostname }}/"
+        flat: yes
+      loop:
+        - "{{ lynis_log }}"
+        - "{{ lynis_html }}"
