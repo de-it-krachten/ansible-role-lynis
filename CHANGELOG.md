@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/de-it-krachten/ansible-role-lynis/compare/v1.0.0...v1.1.0) (2023-05-28)
+
+
+### Features
+
+* Add scheduling ([431d485](https://github.com/de-it-krachten/ansible-role-lynis/commit/431d485f25303653bfbb3db76dd4888fc796d9ec))
+
 # 1.0.0 (2023-01-24)
 
 
