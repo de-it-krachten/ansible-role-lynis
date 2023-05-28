@@ -11,7 +11,7 @@ https://cisofy.com
 ## Dependencies
 
 #### Roles
-None
+- deitkrachten.cron
 
 #### Collections
 - community.general
@@ -57,6 +57,31 @@ lynis_root: /usr/local
 lynis_api: https://api.github.com/repos/CISOfy/lynis
 lynis_repo: https://github.com/CISOfy/lynis
 lynis_url: "{{ lynis_repo }}/archive/refs/tags/{{ lynis_version }}.tar.gz"
+
+# Wrapper script
+lynis_wrapper_script: /usr/local/bin/lynis.sh
+
+# Execute lynis immediately
+lynis_immediate: false
+
+# Lynis schedule defaults
+lynis_execution_user: root
+lynis_execution_group: root
+lynis_schedule: false
+lynis_schedule_command: "{{ lynis_wrapper_script }}"
+lynis_schedule_times:
+  weekday: '*'
+  hour: '02'
+  minute: '00'
+
+# Location for centralized output
+lynis_central_path: /var/log/lynis_central
+
+# Lynix log file
+lynis_log: "/var/log/lynis.log"
+
+# Lynis html report
+lynis_html: "/var/log/lynis.html"
 </pre></code>
 
 

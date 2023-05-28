@@ -3,6 +3,5 @@
 - name: Install
   ansible.builtin.include_tasks: install.yml
 
-- name: Execute
-  ansible.builtin.include_tasks: execute.yml
-  when: lynis_execute
+- name: Schedule
+  ansible.builtin.include_tasks: schedule.yml
