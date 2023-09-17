@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/de-it-krachten/ansible-role-lynis/compare/v1.1.0...v1.2.0) (2023-09-17)
+
+
+### Features
+
+* Update supported platforms & CI ([069e643](https://github.com/de-it-krachten/ansible-role-lynis/commit/069e643c72b3ec899f16dd91f732f7901b764633))
+
 # [1.1.0](https://github.com/de-it-krachten/ansible-role-lynis/compare/v1.0.0...v1.1.0) (2023-05-28)
 
 
