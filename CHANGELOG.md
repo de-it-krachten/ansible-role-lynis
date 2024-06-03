@@ -1,3 +1,10 @@
+# [1.3.0](https://github.com/de-it-krachten/ansible-role-lynis/compare/v1.2.0...v1.3.0) (2024-06-03)
+
+
+### Features
+
+* Add support for Ubuntu 24.04 LTS + Fedora 40 ([b1e61b7](https://github.com/de-it-krachten/ansible-role-lynis/commit/b1e61b71ba39ff7416856063524983661510b60d))
+
 # [1.2.0](https://github.com/de-it-krachten/ansible-role-lynis/compare/v1.1.0...v1.2.0) (2023-09-17)
 
 
