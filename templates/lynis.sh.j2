@@ -47,7 +47,7 @@ echo "--- Starting lynis"
 {{ lynis_root }}/lynis/lynis audit system > ${LOGFILE}
 
 echo "--- Convert log to HTML"
-cat ${LOGFILE} | /usr/local/bin/ansi2html -a > ${LOGDIR}/lynis.html
+cat ${LOGFILE} | /usr/local/venv/lynis/ansi2html -a > ${LOGDIR}/lynis.html
 
 # Send encrypted reports
 if [[ $Transfer == true ]]
