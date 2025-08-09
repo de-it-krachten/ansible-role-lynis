@@ -1,3 +1,14 @@
+# [1.5.0](https://github.com/de-it-krachten/ansible-role-lynis/compare/v1.4.0...v1.5.0) (2025-08-09)
+
+
+### Features
+
+* Add support for AlmaLinux 10 ([4eb8bcc](https://github.com/de-it-krachten/ansible-role-lynis/commit/4eb8bcceeac540de3b5e3d8aaf9336ce7091c40f))
+* Add support for Debian 13 (Trixie) ([58e814d](https://github.com/de-it-krachten/ansible-role-lynis/commit/58e814d8ac82b0f8bb2c9f51f00e3e4625434e54))
+* Add support for OracleLinux 10 ([e4fd260](https://github.com/de-it-krachten/ansible-role-lynis/commit/e4fd2602c8fd02e849eeff2bc10282631559cba7))
+* Add support for Red Hat Enterprise Linux 10 ([d92f360](https://github.com/de-it-krachten/ansible-role-lynis/commit/d92f3601fc7a6a2e13bf39da9851c17344053cd0))
+* Add support for RockyLinux 10 ([89e72a6](https://github.com/de-it-krachten/ansible-role-lynis/commit/89e72a6323a21ce18dfd1346d3966fb750894737))
+
 # [1.4.0](https://github.com/de-it-krachten/ansible-role-lynis/compare/v1.3.0...v1.4.0) (2024-12-29)
 
 
