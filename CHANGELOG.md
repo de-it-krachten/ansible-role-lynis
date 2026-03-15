@@ -1,3 +1,13 @@
+# [1.6.0](https://github.com/de-it-krachten/ansible-role-lynis/compare/v1.5.0...v1.6.0) (2026-03-15)
+
+
+### Features
+
+* Added support for Fedora 43 ([19d61d6](https://github.com/de-it-krachten/ansible-role-lynis/commit/19d61d6a07ccf490eba290e6a595653d4dc04aa4))
+* Drop support for Fedora 41 ([0e5f9b5](https://github.com/de-it-krachten/ansible-role-lynis/commit/0e5f9b545c41fae66fa0d7128b818438e492689f))
+* Drop support for openSUSE Leap 15 ([cf578f9](https://github.com/de-it-krachten/ansible-role-lynis/commit/cf578f9fed77cd48347d58d5d2c22dec35e88dc0))
+* Drop support for SUSE Linux Enterprise 15 ([1db5abc](https://github.com/de-it-krachten/ansible-role-lynis/commit/1db5abc0c516009bbdb38608b4fc58597ebd202a))
+
 # [1.5.0](https://github.com/de-it-krachten/ansible-role-lynis/compare/v1.4.0...v1.5.0) (2025-08-09)
 
 
