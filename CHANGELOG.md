@@ -1,3 +1,12 @@
+# [1.7.0](https://github.com/de-it-krachten/ansible-role-lynis/compare/v1.6.0...v1.7.0) (2026-07-26)
+
+
+### Features
+
+* Added support for Fedora 44 ([ee44054](https://github.com/de-it-krachten/ansible-role-lynis/commit/ee44054b703062cff6818e0585644532eada4878))
+* Added support for Ubuntu 26.04 LTS ([ad8cd0d](https://github.com/de-it-krachten/ansible-role-lynis/commit/ad8cd0df3d73f86d737b4e7caf89aae9c28393d1))
+* Drop support for Fedora 42 ([9c32e03](https://github.com/de-it-krachten/ansible-role-lynis/commit/9c32e03269d5bc22de33809974e3857d016c6611))
+
 # [1.6.0](https://github.com/de-it-krachten/ansible-role-lynis/compare/v1.5.0...v1.6.0) (2026-03-15)
 
 
