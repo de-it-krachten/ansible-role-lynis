@@ -1,3 +1,10 @@
+# [1.8.0](https://github.com/de-it-krachten/ansible-role-lynis/compare/v1.7.0...v1.8.0) (2026-10-30)
+
+
+### Features
+
+* Drop support for Debian 11 (Bullseye) ([73ac5c6](https://github.com/de-it-krachten/ansible-role-lynis/commit/73ac5c65ccd2c70259d6f4a3cc2c30056bed261f))
+
 # [1.7.0](https://github.com/de-it-krachten/ansible-role-lynis/compare/v1.6.0...v1.7.0) (2026-07-26)
 
 
